@@ -78,6 +78,7 @@ Shader "Basic/HalfLambert_Cel_Outline"
 				float3 lightDirWS = UnityWorldSpaceLightDir(i.vertexWS);
 				//半兰伯特光照计算
 				float nDotL = dot( normalWS , lightDirWS );
+				//将光照值映射到0~1范围
 				nDotL = nDotL * 0.5 + 0.5;
 				//将光照值映射到纹理坐标
 				float2 uv = float2( nDotL, 0.5 );
